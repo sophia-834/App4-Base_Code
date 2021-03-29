@@ -24,8 +24,175 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var allergy_count = 0;//I can comment with "//" because this is the JavaScript part of my code
+        var cold_count = 0;
+
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+	
+        }
+
+        function coldAdd(){
+            cold_count = cold_count + 1;
+        }
+	
+	function resultscalculator(){//this is what will do the math for me
+	var resultText = document.getElementById("results");
+	var allergyPercent = (allergy_count / (allergy_count + cold_count)) * 100;//calculates allergyPercent
+	var coldPercent = (cold_count / (allergy_count + cold_count)) * 100;////calculates coldPercent
+	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%";
+	}
+	
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<!--  I now comment with "<!--[message] -->" <!--because this is the JavaScript part of my code
+ -->
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
+<!-- The first thing I did, following experiementing with buttons, was add all of my "question" pages.
+ -->
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+<!-- Every time the onclick="coldAdd();" appears, it adds (1) to the stored number of answers that support the user having allergies or a cold. At the beginning of the questionnaire, this number is 0.
+ -->	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p>    
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a> <!--Changed button color and style! -->
+	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+	</div>
+</div>
+
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Do you have a fever?</p>
+<!-- I had to make sure to switch the components that corresponded with "yes" and "no" below so I could get accurate results. I used this technique whenever the "yes" corresponded with the symptoms of a cold.
+ -->
+	<a href="#three"  onclick="coldAdd(1);" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#three"  onclick="allergyAdd(1);" class="w3-btn w3-blue-grey w3-round">No</a>
+	</div>
+</div>
+	
+<div class="page" id="three">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a sore throat?</p>    
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+	</div>
+</div>
+	
+<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your symptoms seasonal or chronic?</p>    
+    	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+	</div>
+</div>
+<!-- After inputting the preestablished questions, I did some researh and added a few questions of my own. I added pages and buttons for these following the format of the previous pages.
+ -->
+	
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Have you been experiencing symptoms for more than 10 days?</p> 
+	<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#six"  onclick="coldAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+    	</div>
+</div>
+   
+<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+        <p>If you have a runny nose, is the mucus thick/yellow?</p> 
+	<a href="#results"  onclick="coldAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+	</div>
+</div>
+<!-- I made several attempts to see which format worked best to display my results ("Do I add an extra page, or not?"). Decided on no extra page.
+ -->
+
+<div class="page" id="results">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Your results are being calculated.</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+        	<p> Click below to see your results.</p> 
+		<a href="#results" onclick="resultscalculator();" class="w3-btn w3-blue-grey w3-round"> Results! </a>
+		<!-- I linked the "resultscalculator" function above to link it to the formula and variables I developed in the script section. Pressing the "Results!" button will trigger the event.
+ -->
+	</div>
+</div>
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>This questionnaire is not intended to diagnose COVID-19. If you believe you are showing symptoms of COVID-19, please consult your medical provider.</p>
+</footer>
+
 	   
-   </body>
+</body>
 </html>
