@@ -55,7 +55,7 @@ blah, blah, blah, blah
 	
   </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--this code keeps my image from scaling in weird ways on different devices-->
 
 <style>	
 .body {
@@ -100,7 +100,8 @@ img {
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	
+	<!-- The following url marks the location of my image
+ -->
 	<img src="http://www.quickmeme.com/img/47/47e90b4f84c15e4992d0b313f52e2b1764904b12eda08c3e86319db4dc5d22c8.jpg" alt="Smipsons Meme" width="412" height="241">
 	
 <!-- The first thing I did, following experiementing with buttons, was add all of my "question" pages.
@@ -109,10 +110,10 @@ img {
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
-<!-- Every time the onclick="coldAdd();" appears, it adds (1) to the stored number of answers that support the user having allergies or a cold. At the beginning of the questionnaire, this number is 0.
+<!-- Every time the onclick="boredomAdd();" appears, it adds (1) to the stored number of answers that support the user being hungry or bored. At the beginning of the questionnaire, this number is 0.
  -->	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>    
+        <p>Drink a glass of water and wait 5 minutes. Do you still feel hungry?</p>    
 	<a href="#two"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a> <!--Changed button color and style! -->
 	<a href="#two"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
 	</div>
@@ -124,7 +125,7 @@ img {
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Do you have a fever?</p>
+	<p>Have you eaten a full meal in the last 5 or 6 hours?</p>
 <!-- I had to make sure to switch the components that corresponded with "yes" and "no" below so I could get accurate results. I used this technique whenever the "yes" corresponded with the symptoms of a cold.
  -->
 	<a href="#three"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
@@ -138,7 +139,7 @@ img {
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p>    
+        <p>Have you been feeling anxious or stressed lately?</p>    
 	<a href="#four"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
 	<a href="#four"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
 	</div>
@@ -150,7 +151,7 @@ img {
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p>    
+        <p>Is your stomach growling?</p>    
     	<a href="#five"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
 	<a href="#five"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
 	</div>
@@ -164,7 +165,7 @@ img {
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Have you been experiencing symptoms for more than 10 days?</p> 
+        <p>Move around a little bit (perhaps dance to some music or take a short walk. Are you still feeling hungry?</p> 
 	<a href="#six"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
 	<a href="#six"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
     	</div>
@@ -176,9 +177,9 @@ img {
 	</div>
 	
 	<div id="content" class="w3-container">
-        <p>If you have a runny nose, is the mucus thick/yellow?</p> 
-	<a href="#results"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
-	<a href="#results"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
+        <p>If you had to snack, would you reach for an apple (or other low calorie snack) as opposed to something like a bag of chips?</p> 
+	<a href="#results"  onclick="hungerAdd();" class="w3-btn w3-blue-grey w3-round"> Yes</a>
+	<a href="#results"  onclick="boredomAdd();" class="w3-btn w3-blue-grey w3-round">No</a>
 	</div>
 </div>
 <!-- I made several attempts to see which format worked best to display my results ("Do I add an extra page, or not?"). Decided on no extra page.
